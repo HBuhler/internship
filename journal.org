@@ -1,0 +1,14 @@
+* Introduction
+This file contains the reporting for my beloved internship done on
+this topic on that year. (after a few weeks, once you really
+understand your internship, you should write a few paragraphs about
+the context, problem and motivation of your work, with some
+possible use cases. But don't do that right now)
+* Bibliography
+* Journal
+** Week 24 april
+*** Things done
+- emacs's tutorial
+*** Questions
+*** Work Planned [1/]
+- [ ] learn git
