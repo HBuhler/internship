@@ -4,11 +4,107 @@ this topic on that year. (after a few weeks, once you really
 understand your internship, you should write a few paragraphs about
 the context, problem and motivation of your work, with some
 possible use cases. But don't do that right now)
-* Bibliography
+* Finding
+** EQ
+From : Methods and Tools for Exploring Novice Compilation Behaviour (Matthew C. Jadud)
+For a pair of compilation event : none have error -> 0 ; different error -> 8 ; same error -> 11. Normalized to 0->1. Use the mean on a session.
+*** Used in :
+Methods and Tools for Exploring Novice Compilation Behaviour
+Predicting At-Risk Novice Java Programmers Through the Analysis of Online Protocols 
+No Tests Required: Comparing Traditional and Dynamic Predictors of Programming Success
+** Warwin Algorithm
+From : Predicting Performance in an Introductory Programming Course by Logging and Analyzing Student Programming Behavior
+EQ sequel. 
+Use pair of event, grade according to if they are : both error, the same error, same line, and time compared to other student with the same error.
+*** Used in : 
+Predicting Performance in an Introductory Programming Course by Logging and Analyzing Student Programming Behavior
+No Tests Required: Comparing Traditional and Dynamic Predictors of Programming Success
+** Cyclomatic Complexity (Mc Cabe)
+Metrics of the complexity of a program. It's a measurement of the number of linearly independent paths of execution in a program.
+*** Used in : 
+Characterisation of CS1 Student Programming
+
+** BlueJ
+Quick notes : one error by compilation ; data gathered at compilation (code, error, timestamp)
+
+
+** Bibliography
+*** Predicting At-Risk Novice Java Programmers Through the Analysis of Online Protocols
+**** Authors
+Emily S. Tabanao
+Ma. Mercedes T. Rodrigo
+Matthew C. Jadud
+**** Date
+2011
+**** Note
+Attempt to evaluate indicators of the levels of novice programmers.
+Students used BlueJ. Metrics used are : type of error, average time between compilation, EQ (which grade pair of compil, by their error (both error, same error,...)
+Finding : Metrics used seems to be able to characterize group of student. Data correlated with midterm score : total error (-.41), average time between compil (.27), EQ (-.55)
+
+
+*** Predicting Performance in an Introductory Programming Course by Logging and Analyzing Student Programming Behavior
+**** Authors
+Christopher Watson
+Frederick W.B. Li
+Jamie L. Godwin
+
+**** Date
+2013
+
+**** Note
+Attempt to use dynamic metrics to predict variance in coursework marks.
+Student used BlueJ. Improvement set : better pair of event. Use pair of compilation only if there is a modification on the same file, with difference in the code, without comment/deletion fixes.
+Error messages are generalized ; time by error is estimated (if the student work on multiple file & error)
+metrics used : Watwin algo (EQ sequel). Use pair of event, grade according to if they are : both error, the same error, same line, and time compared to other student with the same error.
+Watwin seems to work better that EQ, even when the data are filtered for EQ (same file, no commented fixe,...)
+
+
+*** No Tests Required: Comparing Traditional and Dynamic Predictors of Programming Success
+**** Authors
+Christopher Watson
+Frederick W.B. Li
+Jamie L. Godwin
+
+**** Date
+2014
+
+**** note
+Test of classics metrics. Comparaison of static metrics (gender,...) and dynamic one (Watwin, EQ & co). 
+Student used BlueJ.
+Result : dynamic metrics seems generally better. Strongest metric founded : Watwin. See article for the graph comparaison.
+
+
+*** Characterisation of CS1 Student Programming
+**** Authors
+N. Bosch
+D. Towell
+J. Homer
+**** Date
+2012
+
+**** Note
+Study on the process followed by students for assignements. Students could submit repeatebly their work until a deadline, and have a feedback the test they failed and their errors.
+Metrics used : total time by assignement, number of submission, nb lines of codes, cyclomatic complexity, nb declared variable
+Goal and conclusion seems off topic (base on the fact that student submit a lot) ; but Cyclomatic complexity may be useful
+
+
+*** Coarse-Grained Detection of Student Frustration in an Introductory Programming Course
+**** Authors
+Ma. Mercedes T. rodrigo
+Ryan Shaun J. d. Baker
+**** Date
+2009
+**** Note
+Attempt to detect automatically student frustration. Methods : two observers noted the state and behavior of ten students by sessions ; students used BlueJ, and data like error messages, line of error, source code and timespamp was recorded.
+Result : they find a correlation bewteen frustration and : consecutive compilation wtih the same edit location, same error, time between compil, total errors, number of compilation.
+
 * Journal
 ** Week 24 april
 *** Things done
-- emacs's tutorial
+- setup of workspace (git, emacs,...)
+- start of review of related literature
 *** Questions
-*** Work Planned [1/]
-- [ ] learn git
+*** Work Planned [0/3]
+- [ ] study statistics involved in the different article (linear regression (tool Weka ?))
+- [ ] articles to re-rewiew and prob include in biblio (a first look at novice compilation behaviour using blueJ, methods and tools for exploring novice compilation behaviour, bluefix : using crowd-sourced feed-back to support programming students in error diagnosis abd repair)
+- [ ] complete section BlueJ, Cyclomatic Complexity
