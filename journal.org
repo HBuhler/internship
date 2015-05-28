@@ -49,6 +49,13 @@ http://pmd.sourceforge.net/pmd-5.3.1/pmd-java/rules/java/codesize.html#NPathComp
 - ie : number of path in the flow of the code
 - seems more accurate, but way more complex to implement 
 
+** Hidden Markov Model
+- see "An Introduction to Hidden Markov Models"
+*** TODO Forward-Backward procedure
+- algo for computing the prob of an observation sequence on a given
+  model
+*** TODO Baum-Welch method
+- iterative algo for re-estimate HMM parameters
 
 ** BlueJ
 - bluej.org
@@ -216,11 +223,41 @@ Advances in Web-Based Learning - ICWL 2012
 - To build model, they need programms "similarity". Three metrics are
   used (Bag of words difference, API call dissimilarity, AST change
   severity)
-- a student's progress is modeled by a hidden markov model ; 
-- Black magic occur, and they find milestone/state in the progress of
-  students ; the path used by a student in this state is correlated to
-  his results in assignement
+- a student's progress is modeled by a hidden markov model : they
+  first cluster code snapshot in order to find the state of the HMM ;
+  then cluster the path of students to find different group.
+- They find 3 ggroup (and construct 3 HMM), that can predict later
+  success of student
 
+
+*** An Introduction to Hidden Markov Models
+**** Authors
+- L.R. Rabiner
+- B. H. Juang
+**** Venue
+- ASSP Magazine, IEEE  (Volume:3 ,  Issue: 1 ) 
+- 1986/01
+**** Note
+- HMM def : it's a doubly stochastic process with an underlying
+  stochastic process that is not observable (hidden, the state) but
+  can be observed through another set of stochastic processes that
+  produce the sequence of observed symbols.
+***** HMM elements
+- Q : set of N states
+- A : state transistion probability distribution (at each clock time, a new state
+  (or the same) is entered, depending only of the previous state
+- B : observation symbol probability distribution (depends on the current state)
+- an initial state distribution
+
+
+***** The "three problems for HMM's"
+- (1) given an observation sequence and a model, how do we compute the
+  probability of the observation sequence (use the "forward-backward procedure")
+- (2) Given an observation sequence how we choose a state sequence which
+  is optimal in some meaningul sense
+- (3) How we adjust the models parameters to maximize the probability
+  of the observation sequence (-> 1) (Baum-Welch procedure)
+  
 * Journal
 ** Week 24 april
 *** Things done
@@ -247,8 +284,28 @@ Advances in Web-Based Learning - ICWL 2012
 - added "Modeling How Students Learn to Program" to biblio
 - basic study of statistics
 - read the current harvester
-*** work planned [0/3]
-- [ ] integrate an "idle" event in the PLM
-- [ ] begin a new harvester for the PLM data (basic structure for further use)
-- [ ] find a sound book on Hidden Markov Model (and rewrite a part of
+*** work planned [3/3]
+- [X] integrate an "idle" event in the PLM [postponed to next week]
+- [X] begin a new harvester for the PLM data (basic structure for further use)
+- [X] find a sound book on Hidden Markov Model (and rewrite a part of
   biblio on Modeling How StudentLearn To Program"
+** Week 11 may
+*** things done
+- begin a new harvester for the PLM data (basic structure for further use)
+- find a sound book on Hidden Markov Model (and rewrite a part of
+  biblio on Modeling How StudentLearn To Program)
+- add An Introduction to Hidden Markov Models to biblio
+*** work planned [1/1]
+- [X] integrate an idle state in the PLM (rescheduled)
+** Week 25 may
+*** things done
+- basic work with coron
+- some refactoring on the harvester (iterator structure rather than a parser)
+- the harvester can now produce input for coron (exo tried and failed,
+  EQ higther than a threshold) ; it can now select students who have a
+  least try a set of exo
+- The output of coron seems consistent ; but use two different metrics
+  don't seems to work well, and the output is still quite massive
+*** work planned [0/2]
+- [ ] idle event in plm
+- [ ] find a way to compare input for coron 
