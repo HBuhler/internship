@@ -297,7 +297,7 @@ Advances in Web-Based Learning - ICWL 2012
 - add An Introduction to Hidden Markov Models to biblio
 *** work planned [1/1]
 - [X] integrate an idle state in the PLM (rescheduled)
-** Week 25 may
+** Week 18 may
 *** things done
 - basic work with coron
 - some refactoring on the harvester (iterator structure rather than a parser)
@@ -309,3 +309,31 @@ Advances in Web-Based Learning - ICWL 2012
 *** work planned [0/2]
 - [ ] idle event in plm
 - [ ] find a way to compare input for coron 
+** Week 25 may
+*** things done
+- Idle Event in PLM, and gathered by the harvester
+- base of scalaHandler re-used, some general cleaning on the harvester
+
+** Week 1 june
+*** work done
+- Review of Learning Program Embeddings To Propagate Feedback on
+  student code, automously generating honts by inferring problem
+  solving policies, deconstructing disengagement : analysing learner
+  subpopulation in massive open online courses (work of chris
+  piech). The last will probably not be useful
+- got data to link branchs to grade rate.
+
+*** work planned [1/]
+- [ ] test idle event ; should be correctly gathered, see for futher
+  use ; double check potential bug with use of Instant
+- [ ] continue Scala Handler, may be useful to EQ, and will be for
+  Watwin (same error,...)
+- [ ] find group of student/exo to have more pertinent test
+- [ ] add article from Chris Piech to biblio
+- [ ] add Coron somewhere in journal
+** week 8 june
+*** work planned [1/]
+- [ ] see previous TODO list, a lot of technical work
+- [ ] integrate to biblio (from summary) : chries Piech biblio,
+  probably a little on neural network,
+- [ ] get back to compare metrcis ; try to have a functionnal proto ?
