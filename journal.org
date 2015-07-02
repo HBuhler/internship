@@ -67,6 +67,18 @@ auto-indentation)
 highlight on the line), the display disappear after hitting a key.
 - Data are gathered at compilation. Its included timestamp, code and the error.
 
+** Recurrent Neural Network
+- kind of deep neural network (neural network with some hidden layers,
+  ie non-input and non-output layers)
+- allow cycle in the network
+- LSTM are network where each node is a block ; each block is a little
+  network, with gate : input, output, keep memory, wipe memory
+- note : RNN may be recursive neural network
+
+** coron
+- tool from Team Orpailleur
+- collect Association rule ( {frequent set} -> {frequent set}), allow
+  filter (support, or post-filtering on rule)
 
 
 ** Bibliography
@@ -258,13 +270,94 @@ Advances in Web-Based Learning - ICWL 2012
 - (3) How we adjust the models parameters to maximize the probability
   of the observation sequence (-> 1) (Baum-Welch procedure)
   
+
+*** Learning Program Embeddings to Propagate FeedBack on Student Code
+**** Authors
+- Chris Piech
+- Jonathan Huang
+- Andy Nguyen
+- Mike Phulsuksombati
+- Mehran Sahami
+- Leonidas Guibas
+
+**** Venue
+-22/05/2015
+**** Note
+- Try to propagate feedback, i.e., given a number of annoted student
+  submissions, try to give a feedback to a maximum of student
+- Use three structure to represent the code of student
+- the first represent the functionnality of a programm (NPM)
+- the second add structure and style (NPM-RNN)
+- the last model (RNN) is just the NPM-RNN without the NPM part
+***** NPM model
+- Use vector to represent the world, before (pre-conditon P) and after
+  (post-condtion Q) execution
+- encode & decode (non-linearly) these vector : fp = phi(Wenc . P +
+  benc), Q' = phi(Wdec . fp + bdec)
+- represent the code A as a matrix Ma : fq = Ma . fp
+- Learn Wenc, Wdec, benc, bdec, and all the matrix Ma on student
+  submission, optimizing on the prediction of post-condtion and
+  precision of encode/decode (P' ~= P ?)
+- The code A is seen as a linear relation, but fp & fq are a
+  non-linear representation, in order to capture a maximum of the code
+
+***** NPM-RNN model
+- First, need to learn the matrix Ma from NPM
+- associate to each programm a king of recursive network, following
+  the AST structure
+- At each node j , construct recursvly a matrix aj = phi(sum(Womega
+  . afils) + bomega + Mj), ie the usm of : the children factor a
+  constante to learn, a constant to learn, and the matrix Ma
+- Note that each constant is associate with the type of node : if, while,....
+- On top of that, you train a classifier in order to predict feedback,
+  seen as N binary prediction, and learn Womega,... by optimizing on this predicion
+
+
+*** Automously Generating Hints by Inferring Problem Solving Policies
+**** Authors
+- Chries Piech
+- Mehran Sahami
+- Jonathan Huang
+- Leonidas Guibas
+**** Venue
+- 2015-03-14
+- ACM New York, NY, USA ©2015
+**** Note
+- Use data of hour of code challenge : langage without variables,
+  designed for children
+- Try to find path of partial solution, as an expert would suggest ;
+  and try to communicate that information
+- Using frequency of a transition is biased : student who make a
+  mistake are likely to choose a bad solution
+- Instead, use a historal count (how many time a partial solution was
+  submitted), as it's done by all type of student
+- propose a lot of algorithm for the path, based on the partial count
+  (poisson, independent); using a (simplified) markov decision problem,...
+
+
+*** Deep Knowledge Tracing
+**** Authors
+- Chris Piech 
+- Jonathan Spencer
+- Jonathan Huang
+- Surya Ganguli
+- Mehran Sahami
+- Leonidas Guibas
+- Jasch Sol-Dickstein
+**** Venue
+-19 june 2015
+**** Note
+- Use two neural network : a basic and a LSTM.
+
+
+
 * Journal
 ** Week 24 april
 *** Things done
 - setup of workspace (git, emacs,...)
 - start of review of related literature
-*** Work Planned [2/3]
-- [ ] study statistics involved in the different article (linear
+*** Work Planned [3/3]
+- [X] study statistics involved in the different article (linear
   regression (tool Weka ?))
 - [X] complete section BlueJ, Cyclomatic Complexity
 - [X] articles to re-rewiew and prob include in biblio (a first look
@@ -306,8 +399,8 @@ Advances in Web-Based Learning - ICWL 2012
   least try a set of exo
 - The output of coron seems consistent ; but use two different metrics
   don't seems to work well, and the output is still quite massive
-*** work planned [0/2]
-- [ ] idle event in plm
+*** work planned [1/2]
+- [X] idle event in plm
 - [ ] find a way to compare input for coron 
 ** Week 25 may
 *** things done
@@ -323,17 +416,26 @@ Advances in Web-Based Learning - ICWL 2012
   piech). The last will probably not be useful
 - got data to link branchs to grade rate.
 
-*** work planned [1/]
-- [ ] test idle event ; should be correctly gathered, see for futher
+*** work planned [4/5]
+- [X] test idle event ; should be correctly gathered, see for futher
   use ; double check potential bug with use of Instant
 - [ ] continue Scala Handler, may be useful to EQ, and will be for
   Watwin (same error,...)
-- [ ] find group of student/exo to have more pertinent test
-- [ ] add article from Chris Piech to biblio
-- [ ] add Coron somewhere in journal
+- [X] find group of student/exo to have more pertinent test (may need futher work)
+- [X] add article from Chris Piech to biblio
+- [X] add Coron somewhere in journal
 ** week 8 june
-*** work planned [1/]
-- [ ] see previous TODO list, a lot of technical work
-- [ ] integrate to biblio (from summary) : chries Piech biblio,
+*** work done
+- TODO last week + this week
+*** work Planned [3/3]
+- [X] See Previous Todo list, a lot of technical work
+- [X] integrate to biblio (from summary) : chries Piech biblio,
   probably a little on neural network,
-- [ ] get back to compare metrcis ; try to have a functionnal proto ?
+- [X] get back to compare metrcis ; try to have a functionnal proto ? (new objective)
+** week 15 june  
+- merge between my new harvester and the code from Alexandre
+- Harvester cleaned
+- Chris Piech biblio completed
+** week 29 june
+*** work planned
+- re-read biblio to see what can be useful for the new objective
