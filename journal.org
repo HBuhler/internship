@@ -437,5 +437,25 @@ Advances in Web-Based Learning - ICWL 2012
 - Harvester cleaned
 - Chris Piech biblio completed
 ** week 29 june
+*** things done
+- review latest Chris Piech article, need to include note in biblio
+  (Neural Network too)
+- new structure in the harvester to match new goal : Exercise, to be
+  able to compute on exercise, know when it successfull (commit,
+  time), compute on at given commit to predict success under a limit
+  (number of commit)
+- first attempt with EQ (easier to implement, but probably not adapted
+  to predict blocking ; first implementation to try (with a threshold,
+  to do a binary prediction), need futher work to test)
+- note : see how to weight intermediate EQ (probably not the same
+  relevance if EQ is compute on 2/3 commit or 10...)
+ 
+*** work planned [1/1]
+- [X] re-read biblio to see what can be useful for the new objective
+  [need futher work, idea for implementation]
+
+** week 6 july
 *** work planned
-- re-read biblio to see what can be useful for the new objective
+- [ ] finish EQ to predict blocking, test.
+- [ ] see what structure may be useful for "real" metrics 
+- [ ] try a first prototype of neural network/... ?
