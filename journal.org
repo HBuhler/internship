@@ -453,9 +453,34 @@ Advances in Web-Based Learning - ICWL 2012
 *** work planned [1/1]
 - [X] re-read biblio to see what can be useful for the new objective
   [need futher work, idea for implementation]
-
 ** week 6 july
+*** things done
+- rework on PLM-server (finally only debug)
 *** work planned
-- [ ] finish EQ to predict blocking, test.
-- [ ] see what structure may be useful for "real" metrics 
-- [ ] try a first prototype of neural network/... ?
+- [X] finish EQ to predict blocking, test. (need futher work, match
+  with other model later)
+- [X] see what structure may be useful for "real" metrics
+- [X] try a first prototype of neural network/... ? (done later)
+** week 13 july
+*** things done
+- structure for predict blocking should be complete (exercice class, idle
+  event to handle change in exercice,...)
+** week 20 july
+*** things done 
+- Neuroph installed, basic learning & tuto. Seems ok, but lack of doc
+  to use the java interface
+*** work planned
+- [X] try neuroph 
+** week 27 july
+*** things done
+- Try to predict blocking with neural network. Implemented structure to create
+  bundle of learning/test commit, evaluate network. 
+** week 3 August
+*** things done
+- Implement (reimplement for EQ) basic metrics to compare with
+  networks (or use). Implemented in oder to be able to modify some
+  trahshold and try and compare other value
+- debug and generalise of the structure for lerning
+** week 10 August
+*** work planned
+- try to generate and compare random network
